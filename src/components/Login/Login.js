@@ -15,7 +15,7 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" id="" placeholder='Your Password' required />
                 </div>
-            <input className='btn-submit' type="submit" value="Login" />
+            <input className='btn-submit' type="submit" value= 'Login' />
             </form>
             <p>New to Ema John? <Link to='/signup'>Create New Account</Link></p>
         </div>

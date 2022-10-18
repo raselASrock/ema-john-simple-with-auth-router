@@ -7,3 +7,11 @@ Auth Setup
 5. get firebase config in your firebase.config.js
 6. export app from firebase.config.js file 
  */
+
+/* 
+1. create userContext: (Auth Context) userContext --> Component Name
+user context provides Auth Context
+2. create AuthContext
+3. set AuthContext.Provider
+4. make sure you set the children
+*/
