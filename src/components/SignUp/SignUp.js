@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SignUp.css'
 
 const SignUp = () => {
+    const [error, setError] = useState(null)
 const handleSubmit = (event) =>{
     event.preventDefault();
     const form = event.target;
@@ -10,6 +11,16 @@ const handleSubmit = (event) =>{
     const password = form.password.value;
     const confirm = form.confirm.value;
     console.log(email, password, confirm);
+
+    if(password.length <6){
+        setError("Your Password should be more than six character long");
+        return;
+    }
+
+    if(password !== confirm){
+        setError("Your Password didn't match");
+        return;
+    }
 }
 
 
@@ -32,6 +43,7 @@ const handleSubmit = (event) =>{
             <input className='btn-submit' type="submit" value= 'SignUp' />
             </form>
             <p>Already have an account? <Link to='/login'>Login</Link></p>
+            <p className='text-error'>{error}</p>
         </div>
     );
 };
